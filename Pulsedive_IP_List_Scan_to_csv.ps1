@@ -1,7 +1,7 @@
 # Get API key and input CSV from user
 # It is recommended to store the Pulsedive API key and password as a variable so the key does not have to be coded into the script.
-$apiKey = "[PULSEDIVE API KEY]"
-$inputCsv = "C:\[INSERT FILE PATH]\input_ip_addresses.csv"
+$apiKey = "[INSERT API KEY HERE]"
+$inputCsv = "input_ip_addresses.csv"
 
 # Read the input CSV and store the IP addresses in an array
 $ipAddresses = Import-Csv $inputCsv | Select-Object -ExpandProperty IP
@@ -57,4 +57,5 @@ foreach ($ip in $ipAddresses) {
 # Output the information
 $output
 
-$output | Export-Csv -Path "C:\[INSERT FILE PATH]\pulsedive_ip_list_results.csv" -NoTypeInformation
+$output | Export-Csv -Path "pulsedive_ip_list_results.csv" -NoTypeInformation
+
